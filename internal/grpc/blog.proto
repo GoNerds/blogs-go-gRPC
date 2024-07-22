@@ -1,1 +1,17 @@
-ECHO is on.
+syntax = "proto3";
+
+package grpc;
+
+service Blogservice {
+    rpc CreateBlog(CreateBlogRequest) returns (CreateBlogResponse);
+}
+
+message CreateBlogRequest {
+    string title = 1;
+    string content = 2;
+    string author = 3;
+}
+
+message CreateBlogResponse {
+    string id = 1
+}
